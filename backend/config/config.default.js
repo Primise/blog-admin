@@ -18,9 +18,24 @@ module.exports = appInfo => {
   // add your middleware config here
   config.middleware = [];
 
+
+  config.cors = {
+    credentials:true,
+    origin:'*',
+    allowMethods:'GET,POST,PUT,DELETE'
+  }
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
+    sequelize:{
+      dialect:'mysql',
+      host:'localhost',
+      port: '3306',
+      database: 'test',
+      username: 'root',
+      password: '123456', 
+    }
+   
   };
 
   return {
